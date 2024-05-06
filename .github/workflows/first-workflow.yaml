@@ -23,6 +23,6 @@ jobs:
         needs: [run-shell-commands]
         steps:
             - name: echo a string
-              run: Weite-Output "String on Windows PowerShell"
+              run: Write-Output "String on Windows PowerShell"
             - name: Error Step
               run: doesnotexists
