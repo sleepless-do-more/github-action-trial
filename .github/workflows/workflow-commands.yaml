@@ -10,7 +10,7 @@ jobs:
             - name: Setting an error message with params
               run: echo "::error title:Error title, file=app.js,line=2, endLine=3, col=5, endColumn=7::Missing Semicolon on this section"
             - name: Setting a debug message with params
-              run: echo "::debug title:Debug title, file=app.js,line=2, endLine=3, col=5, endColumn=7::Missing Semicolon on this section"
+              run: echo "::debug title:Debug title,file=app.js,line=2,endLine=3,col=5,endColumn=7::Missing Semicolon on this section"
             - name: Setting a warning message with params
               run: echo "::warning title:Warning title, file=app.js,line=2, endLine=3, col=5, endColumn=7::Missing Semicolon on this section"
             - name: Setting a notice message with params
