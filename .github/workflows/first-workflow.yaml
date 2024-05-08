@@ -25,4 +25,4 @@ jobs:
             - name: echo a string
               run: Write-Output "String on Windows PowerShell"
             - name: Error Step
-              run: doesnotexistssss
+              run: doesnotexists
