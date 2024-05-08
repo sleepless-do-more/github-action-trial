@@ -1,5 +1,28 @@
 name: Repository Events
-on: [push, pull_request, issues]
+on:
+    push:
+        branches:
+            - main
+            - "feat/*" # matches `feat/x` but will not matched `feat/x/x`
+            - "feat/**" # matches `feat/x` and also matched `feat/x/x`
+            # - "!feat/feat-1" # ignore the `feat/feat-1` branch (Order is important here)
+            # See more on [https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet]  
+        # branches-ignore: # cannot use with [branches]
+        #     - develop 
+        tags:
+            - v1.* # match v1.1, v1.2 and so on
+            - "!v1.1.1" # exclude this tag
+        paths:
+            - "**.js"
+            - "!app.js"
+    pull_request:
+        types: [opened, reopened, synchronize]
+        branches:
+            - main
+        paths:
+            - "**.js"
+    issues:
+        types: [opened]
 
 jobs:
     checkout-test:
